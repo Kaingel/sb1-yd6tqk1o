@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-gold: #D4AF37;
+}
+
+/* Base styles */
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @apply antialiased;
+}
+
+/* Custom colors */
+.text-gold {
+  color: var(--color-gold);
+}
+
+.bg-gold {
+  background-color: var(--color-gold);
+}
+
+/* Mobile-first responsive styles */
+@layer utilities {
+  .container {
+    @apply px-4 mx-auto;
+    max-width: 100%;
+  }
+  
+  @screen sm {
+    .container {
+      max-width: 640px;
+    }
+  }
+  
+  @screen md {
+    .container {
+      max-width: 768px;
+    }
+  }
+  
+  @screen lg {
+    .container {
+      max-width: 1024px;
+    }
+  }
+  
+  @screen xl {
+    .container {
+      max-width: 1280px;
+    }
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+  .hover\:scale-105 {
+    transform: none !important;
+  }
+}
+
+/* Form element consistency */
+input,
+select,
+textarea,
+button {
+  @apply appearance-none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* iOS input padding fix */
+input,
+textarea {
+  @apply px-4 py-3;
+}
+
+/* Smooth scrolling for all browsers */
+html {
+  scroll-behavior: smooth;
+  @supports not (scroll-behavior: smooth) {
+    scroll-behavior: auto;
+  }
+}
+
+/* Better tap targets for mobile */
+button,
+[role="button"],
+input,
+select,
+textarea {
+  @apply min-h-[44px];
+}
